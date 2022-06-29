@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    
+<h1>Welcome to Tech365</h1>
+<!-- <img src="{% static './images/engineering.png' %}" alt=""> -->
+<a href="/add">Add new students</a>
+<table border="1">
+    <tr>
+        <td>Photo</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+               
+    </tr>
+  
+  {% for i in data  %}
+    <tr>
+        <td>{{ i.id }}</td>
+        <td> <img src="{{ i.Photo.url }}" alt=""> </td>
+        <td>{{ i.first_name }}</td>
+        <td>{{ i.last_name }}</td>
+        <td>{{ i.email }}</td>
+        <td> {{ i.phone }} </td>
+        <td> {{ i.is_admitted }} </td>
+        <td>
+            <a href="/edit/{{ i.id }}">Edit</a>
+            <a href="{% url 'delete' i.id %}">Delete</a>
+            <a href="/delete/{{ i.id }}">Remove</a>
+            <a href="/detail/{{ i.id }}">View</a>
+        </td>
+    
+    </tr>
+  {% endfor %}
+    
+</table>
+
+{% endblock content %}
+    

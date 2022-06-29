@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>Add new student</h1>
+
+<form method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    <div>
+        <input type="text" placeholder="first name" name="first_name" re>
+    </div>
+    <div>
+        <input type="text" placeholder="last name" name="last_name">
+    </div>
+    <div>
+        <input type="email" placeholder="email" name="email">
+    </div>
+    <div>
+        <input type="text" placeholder="phone" name="phone">
+    </div>
+    <div>
+        <select name="gender">
+            <option name="gender" value="male">Male</option>
+            <option name="gender" value="female">Female</option>
+        </select>
+    </div>
+    <div>
+        <input type="file" placeholder="upload photo" name="Photo" >
+    </div>
+    <div>
+        <select name="is_admitted">
+            <option name="is_admitted" value="True">True</option>
+            <option name="is_admitted" value="False">False</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit"  value="submit"> Submit </button>
+    </div>
+</form>
+
+{% endblock content %}

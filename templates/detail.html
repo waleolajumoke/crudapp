@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>Student Detail</h1>
+
+<img src="{{ data.Photo.url }}" alt="">
+<h1>{{ data.first_name }} {{ data.last_name }}</h1>
+<p>{{ data.phone }}</p>
+<p>{{ data.email  }}</p>
+<p>{{data.gender  }}</p>
+<p>{{ data.is_admitted }}</p>
+
+{% endblock content %}
